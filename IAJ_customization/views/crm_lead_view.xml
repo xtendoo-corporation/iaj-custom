@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+<record id="iaj_crm_case_form_view_oppor" model="ir.ui.view">
+    <field name="name">iaj.crm.lead.form.opportunity</field>
+    <field name="model">crm.lead</field>
+    <field name="inherit_id" ref="crm.crm_case_form_view_oppor" />
+    <field name="priority">20</field>
+    <field name="arch" type="xml">
+      <xpath expr="//h2[hasclass('o_row')]" position="attributes">
+           <attribute name="invisible">1</attribute>
+      </xpath>
+      <xpath expr="//field[@name='team_id']" position="attributes">
+           <attribute name="invisible">1</attribute>
+      </xpath>
+    </field>
+</record>
+
+<record id="iaj_view_crm_case_opportunities_filter" model="ir.ui.view">
+    <field name="name">crm.lead.search.opportunity</field>
+    <field name="model">crm.lead</field>
+    <field name="inherit_id" ref="crm.view_crm_case_opportunities_filter" />
+    <field name="arch" type="xml">
+      <!-- <search string="Search Opportunities"> -->
+      <xpath expr="//filter[@name='assigned_to_me']" position="attributes">
+           <attribute name="string">My Management Channels</attribute>
+      </xpath>
+
+    </field>
+</record>
+
+<!-- <menuitem id="crm.crm_team_config"
+    name="Management Channels"
+    parent="crm.crm_menu_config"
+    action="sales_team.sales_team_config_action"
+    sequence="5"/> -->
+
+<!-- <record model="ir.ui.menu" id="sale.crm_team_config">
+  <field name="name">Management Channels</field>
+</record> -->
+
+<!-- <menuitem id="crm.sales_team_menu_report_crm"
+    name="Management Channels"
+    parent="crm.crm_menu_report"
+    action="sales_team.crm_team_salesteams_act"
+    sequence="10"/> -->
+
+<!-- <record model="ir.ui.menu" id="sale.sales_team_menu_report_crm">
+  <field name="name">Management Channels</field>
+</record> -->
+
+<record id="iaj_view_create_opportunity_simplified" model="ir.ui.view">
+    <field name="name">iaj.crm.lead.form.simple</field>
+    <field name="model">crm.lead</field>
+    <field name="priority">1000</field>
+    <field name="inherit_id" ref="crm.view_create_opportunity_simplified" />
+    <field name="arch" type="xml">
+      <xpath expr="//label[@for='planned_revenue']" position="attributes">
+           <attribute name="invisible">1</attribute>
+      </xpath>
+      <xpath expr="//field[@name='planned_revenue']" position="attributes">
+           <attribute name="invisible">1</attribute>
+      </xpath>
+    </field>
+</record>
+
+
+</odoo>

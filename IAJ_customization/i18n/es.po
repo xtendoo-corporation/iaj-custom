@@ -1,0 +1,32 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* IAJ-customization
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 11.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-02-13 08:22+0000\n"
+"PO-Revision-Date: 2019-02-13 08:22+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: IAJ-customization
+#: model:ir.ui.view,arch_db:IAJ-customization.iaj_view_partner_form
+msgid "Configuration"
+msgstr "Configuración"
+
+#. module: IAJ-customization
+#: model:ir.ui.view,arch_db:IAJ-customization.iaj_view_crm_case_opportunities_filter
+msgid "My Management Channels"
+msgstr "Mis Canales de Gestión"
+
+###. module: sale
+###: model:ir.ui.menu,name:sale.crm_team_config
+###: model:ir.ui.menu,name:sale.sales_team_menu_report_crm
+##msgid "Sales Channels"
+##msgstr "Canales de Gestión"

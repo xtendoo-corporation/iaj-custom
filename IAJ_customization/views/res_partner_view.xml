@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+    <record id="iaj_view_partner_form" model="ir.ui.view">
+            <field name="name">iaj.view.partner.form</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_partner_form"/>
+            <field name="groups_id" eval="[(4, ref('sales_team.group_sale_salesman'))]"/>
+            <field name="arch" type="xml">
+              <xpath expr="//page[@name='sales_purchases']" position="attributes">
+					         <attribute name="string">Configuration</attribute>
+				      </xpath>
+              <xpath expr="//page[@name='personal_information_page']//group[@name='personal_information_group']//field[@name='gender']" position="after">
+                  <field name='fecha_nacimiento'/>
+                  <field name='formacion_academica'/>
+                  <field name='situacion_familiar'/>
+              </xpath>
+              <xpath expr="//page[@name='personal_information_page']" position="after">
+                <page name="retorno_joven" string="Retorno Joven">
+                    <group>
+                      <field name='contactado'/>
+                      <field name='anio_fuera'/>
+                      <field name='fecha_alta'/>
+                      <field name='disponibilidad'/>
+                      <field name='puesto_interes'/>
+                      <field name='salario_deseado'/>
+                    </group>
+                </page>
+              </xpath>
+    		    </field>
+    </record>
+
+    <record id="sale.res_partner_view_buttons" model="ir.ui.view">
+        <field name="name">res.partner.view.buttons</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form" />
+        <field name="priority" eval="20"/>
+        <field name="groups_id" eval="[(4, ref('sales_team.group_sale_salesman'))]"/>
+        <field name="arch" type="xml">
+            <button name="toggle_active" position="before">
+                <button class="oe_stat_button" type="action" name="%(sale.act_res_partner_2_sale_order)d"
+                    attrs="{'invisible': True}"
+                    icon="fa-usd">
+                    <field string="Sales" name="sale_order_count" widget="statinfo"/>
+                </button>
+            </button>
+            <page name="internal_notes" position="inside">
+                <group colspan="2" col="2" groups="sale.group_warning_sale">
+                    <separator string="Warning on the Sales Order" colspan="4" />
+                        <field name="sale_warn" nolabel="1" />
+                        <field name="sale_warn_msg" colspan="3" nolabel="1"
+                                attrs="{'required':[('sale_warn','!=','no-message')],'readonly':[('sale_warn','=','no-message')]}"/>
+                </group>
+            </page>
+        </field>
+    </record>
+
+</odoo>
