@@ -1,4 +1,4 @@
-# Copyright 2023 Xtendoo - Manuel Calero
+# Copyright 2023 Xtendoo - Manuel Calero, Daniel Domínguez
 # License AGPL-3 - See http://www.gnu.org/licenses/agpl-3.0.html
 # See README.rst file on addon root folder for more details
 
